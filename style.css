@@ -1,0 +1,250 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(142, 84, 235);
+}
+
+.quiz {
+    width: 400px;
+    height: 440px;
+    outline-style: groove;
+    outline-color: rgb(32, 170, 185);
+    outline-width: 15px;
+    margin: 0px auto;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    position: relative;
+    top: 50px;
+    box-shadow: 6px 6px 20px 10px black;
+}
+
+.quiz-item:hover {
+    filter: brightness(90%);
+    transform: scale(0.95);
+    transition: 0.3s ease;
+}
+
+.quiz-container {
+    background-color: rgb(50, 84, 205);
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.quiz-title {
+    display: inline-block;
+    position: absolute;
+    top: 23px;
+    width: 100%;
+    text-align: center;
+    color: pink;
+    text-shadow: 1px 1px 2px black;
+}
+
+.qust-box {
+    position: absolute;
+    top: 95px;
+    left: 2.25px;
+    width: 400px;
+    height: 300px;
+}
+
+.quiz-item {
+    cursor: pointer;
+    width: 196px;
+    height: 150px;
+    float: left;
+    background-color: rgb(32, 170, 185);
+    margin: 1px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 1.3em;
+    color: white;
+    line-height: 150px;
+    transition: 0.3s ease;
+}
+
+.score {
+    position: absolute;
+    color: white;
+    top: 410px;
+    left: 40px;
+    text-align: left;
+    color: pink;
+    transform: scale(1.5);
+}
+
+.goodAnswer {
+    background-color: rgb(49, 160, 49);
+}
+
+.badAnswer {
+    background-color: rgb(235, 29, 29);
+}
+
+.quiz-complete {
+    position: absolute;
+    width: 500px;
+    height: 320px;
+    outline-style: groove;
+    outline-color: rgb(56, 124, 132);
+    outline-width: 15px;
+    background-color: rgb(77, 143, 177);
+    left: -50px;
+    top: 90px;
+    z-index: 3;
+    display: none;
+}
+
+.blur {
+    position: absolute;
+    left: -200px;
+    top: -50px;
+    width: 800px;
+    height: 600px;
+    background-color: rgba(0, 0, 128, 0.7);
+    border-radius: 50px;
+    z-index: 2;
+    filter: blur(80px);
+    display: none;
+}
+
+.quiz-complete-text {
+    font-size: 2rem;
+    text-align: center;
+    padding: 25px;
+    text-shadow: 1px 1px 2px black;
+    color: white;
+    background-color: rgb(50, 84, 205);
+}
+
+.reload {
+    cursor: pointer;
+    position: absolute;
+    left: 180px;
+    top: 180px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    background-color: rgb(77, 143, 177);
+    text-shadow: 1px 1px 2px black;
+    color: white;
+    border: 20px solid navy;
+}
+
+.reload:hover {
+    filter: brightness(110%);
+}
+
+.reload:active {
+    filter: brightness(95%);
+    transform: scale(0.98);
+}
+
+.hat {
+    position: relative;
+    width: 110px;
+    height: 30px;
+}
+
+.hat-top {
+    width: 90px;
+    height: 30px;
+    position: absolute;
+    background-color: rgb(46, 28, 64);
+    transform: rotate(-25deg);
+    left: -26px;
+    top: -20px;
+    z-index: 1;
+}
+
+.hat-details {
+    width: 140px;
+    height: 130px;
+    position: absolute;
+    background-color: rgb(75, 48, 103);
+    left: -60px;
+    top: -90px;
+    transform: rotate3d(30, 120, 170, 160deg);
+    z-index: 2;
+}
+
+.hat-details::before {
+    content: '';
+    display: block;
+    position: absolute;
+    background-color: gold;
+    border: 0.5px sole black;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    left: 65px;
+    top: 60px;
+}
+
+.hat-details::after {
+    content: '';
+    display: block;
+    position: absolute;
+    background-color: gold;
+    border: 0.5px sole black;
+    width: 6px;
+    height: 70px;
+    left: 67px;
+    top: -10px;
+}
+
+.circle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: gold;
+    border: 1px sole black;
+    border-radius: 50%;
+    left: 15px;
+    top: -2px;
+    z-index: 2;
+}
+
+.thread {
+    position: absolute;
+    width: 50px;
+    height: 60px;
+    top: 0px;
+    left: -19.5px;
+    border: 40px solid transparent;
+    border-bottom-width: 500px;
+    border-color: transparent transparent gold transparent;
+    transform-origin: top;
+    transform: scale(0.15) rotate(45deg);
+    z-index: 2;
+    animation-name: threadRotate;
+    animation-duration: 3.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.thread::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 80px;
+    height: 50px;
+    background-color: black;
+    top: 450px;
+    left: -40px;
+}
+
+@keyframes threadRotate {
+    50% {
+        transform: scale(0.15) rotate(-45deg);
+    }
+    100% {
+        transform: scale(0.15) rotate(45deg);
+    }
+}
