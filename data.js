@@ -46,23 +46,18 @@ const quiz = [{
 ];
 
 const answer = [{
-        position: 1,
         answer: "while (i <= 7)",
     },
     {
-        position: 2,
         answer: "=",
     },
     {
-        position: 3,
         answer: "Math.max(x, y)",
     },
     {
-        position: 4,
         answer: "true",
     },
     {
-        position: 5,
         answer: "let date = new Date()",
     },
 ];

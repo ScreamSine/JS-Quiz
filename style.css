@@ -15,7 +15,7 @@ body {
     outline-color: rgb(32, 170, 185);
     outline-width: 15px;
     margin: 0px auto;
-    margin-top: 30px;
+    margin-top: 40px;
     margin-bottom: 40px;
     position: relative;
     top: 50px;
@@ -221,7 +221,7 @@ body {
     border-bottom-width: 500px;
     border-color: transparent transparent gold transparent;
     transform-origin: top;
-    transform: scale(0.15) rotate(45deg);
+    transform: scale(0.15) rotate(35deg);
     z-index: 2;
     animation-name: threadRotate;
     animation-duration: 3.5s;
@@ -242,9 +242,9 @@ body {
 
 @keyframes threadRotate {
     50% {
-        transform: scale(0.15) rotate(-45deg);
+        transform: scale(0.15) rotate(-35deg);
     }
     100% {
-        transform: scale(0.15) rotate(45deg);
+        transform: scale(0.15) rotate(35deg);
     }
 }
