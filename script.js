@@ -1,4 +1,5 @@
 let counter = 0;
+let goodCounter = 0;
 const quizTitle = document.querySelector(".quiz-title");
 const card = document.querySelectorAll(".quiz-item");
 const mainBox = document.querySelector(".qust-box");
@@ -17,11 +18,15 @@ button.addEventListener("click", () => {
 });
 
 function scoreCountUp() {
-    scoreCount.innerHTML = counter;
-    finalCount.innerHTML = counter;
+    scoreCount.innerHTML = goodCounter;
+    finalCount.innerHTML = goodCounter;
 }
 
 function nexpPage() {
+    if (answer.length === counter) {
+        endQuiz();
+        return;
+    }
     renderQuizTitle(counter);
     renderQuizCards(counter);
 }
@@ -49,6 +54,12 @@ function makeFourCard(counter) {
     }
 }
 
+function endQuiz() {
+    applause.play();
+    quizComplete.style.display = "block";
+    blur.style.display = "block";
+}
+
 mainBox.addEventListener("click", (e) => {
     let target = e.target;
     if (target.className === "quiz-item") {
@@ -56,24 +67,22 @@ mainBox.addEventListener("click", (e) => {
             right.play();
             target.classList.add("goodAnswer");
             counter++;
+            goodCounter++;
             scoreCountUp();
-            if (answer.length === counter) {
-                setTimeout(function() {
-                    applause.play();
-                    quizComplete.style.display = "block";
-                    blur.style.display = "block";
-                }, 1000);
-            }
             setTimeout(function() {
                 target.classList.remove("goodAnswer");
             }, 1000);
             setTimeout(nexpPage, 1000);
         } else {
-            target.classList.add("badAnswer");
             wrongAnswer.play();
+            target.classList.add("badAnswer");
+            counter++;
+            goodCounter += 0;
+            scoreCountUp();
             setTimeout(function() {
                 target.classList.remove("badAnswer");
             }, 1000);
+            setTimeout(nexpPage, 1000);
         }
     }
 });
