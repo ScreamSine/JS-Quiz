@@ -5,7 +5,6 @@ const quizTitle = document.querySelector(".quiz-title");
 const card = document.querySelectorAll(".quiz-item");
 const mainBox = document.querySelector(".qust-box");
 const scoreCount = document.querySelector(".scoreCount");
-const finalCount = document.querySelector(".finalCount");
 const button = document.querySelector("button");
 const quizComplete = document.querySelector(".quiz-complete");
 const blur = document.querySelector(".blur");
@@ -21,7 +20,6 @@ button.addEventListener("click", () => {
 
 function scoreCountUp() {
     scoreCount.innerHTML = goodCounter;
-    finalCount.innerHTML = goodCounter;
 }
 
 function nexpPage() {
@@ -57,15 +55,26 @@ function makeFourCard(counter) {
 }
 
 function endQuiz() {
+    let messageFail = `Увы, вы не смогли пройти квиз до конца, вы набрали ${goodCounter} очков`;
+    let messageComplete = `Вы молодец! Вы ответили верно на ${goodCounter} из ${answer.length} вопросов`;
+    let messageMaster = `Ого, вы ответили верно на все ${answer.length} вопросов!`;
+    let finishText = document.querySelector(".quiz-complete-text");
     applause.play();
     quizComplete.style.display = "block";
     blur.style.display = "block";
+    if (badCounter === hearts.length) {
+        finishText.textContent = messageFail;
+    } else if (goodCounter === answer.length) {
+        finishText.textContent = messageMaster;
+    } else {
+        finishText.textContent = messageComplete;
+    }
 }
 
 function killHeart() {
     hearts[badCounter].classList.add("dark-heart");
     badCounter++;
-    if (badCounter === 3) {
+    if (badCounter === hearts.length) {
         endQuiz();
     }
 }
