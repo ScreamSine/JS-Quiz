@@ -5,7 +5,9 @@
 }
 
 body {
-    background-color: rgb(142, 84, 235);
+    background-image: linear-gradient(rgb(50, 84, 205), rgb(231, 66, 204));
+    width: 100vw;
+    height: 100vh;
 }
 
 .quiz {
@@ -38,7 +40,7 @@ body {
 .quiz-title {
     display: inline-block;
     position: absolute;
-    top: 23px;
+    top: 8px;
     width: 100%;
     text-align: center;
     color: pink;
@@ -86,7 +88,7 @@ body {
     background-color: rgb(235, 29, 29);
 }
 
-.quiz-complete {
+.quiz-modal {
     position: absolute;
     width: 500px;
     height: 320px;
@@ -100,17 +102,8 @@ body {
     display: none;
 }
 
-.blur {
-    position: absolute;
-    left: -200px;
-    top: -50px;
-    width: 800px;
-    height: 600px;
-    background-color: rgba(0, 0, 128, 0.7);
-    border-radius: 50px;
-    z-index: 2;
-    filter: blur(80px);
-    display: none;
+.start {
+    display: block;
 }
 
 .quiz-complete-text {

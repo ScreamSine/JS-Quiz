@@ -26,7 +26,7 @@ const quiz = [{
         },
     },
     {
-        question: "Что вернет следующий код: Boolean (10 > 9)",
+        question: "Что вернет следующий код console.log(10 > 9)",
         answer: {
             1: "true",
             2: "1",
@@ -41,6 +41,51 @@ const quiz = [{
             2: "let date = date('now')",
             3: "let date = new Date()",
             4: "let date = current()",
+        },
+    },
+    {
+        question: "Используя какой оператор можно проверить наличие свойств в объекте?",
+        answer: {
+            1: "of",
+            2: "in",
+            3: "include",
+            4: "contain",
+        },
+    },
+    {
+        question: "Какое имя неккоректно для объявления переменной?",
+        answer: {
+            1: "_name_",
+            2: "$cost",
+            3: "false",
+            4: "Object",
+        },
+    },
+    {
+        question: "Сколько операндов принимает тернарный оператор?",
+        answer: {
+            1: "Один оператор",
+            2: "Два оператора",
+            3: "Три оператора",
+            4: "Любое количество",
+        },
+    },
+    {
+        question: "С помощью какого оператора можно создать экземпеляр объекта имеющего конструткор?",
+        answer: {
+            1: "class",
+            2: "new",
+            3: "create",
+            4: "constructor",
+        },
+    },
+    {
+        question: "Какой тип данных отсутствует в JavaScript?",
+        answer: {
+            1: "null",
+            2: "float",
+            3: "bigint",
+            4: "symbol",
         },
     },
 ];
@@ -59,5 +104,20 @@ const answer = [{
     },
     {
         answer: "let date = new Date()",
+    },
+    {
+        answer: "in",
+    },
+    {
+        answer: "false",
+    },
+    {
+        answer: "Три оператора",
+    },
+    {
+        answer: "new",
+    },
+    {
+        answer: "float",
     },
 ];

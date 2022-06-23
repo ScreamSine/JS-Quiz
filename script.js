@@ -5,16 +5,23 @@ const quizTitle = document.querySelector(".quiz-title");
 const card = document.querySelectorAll(".quiz-item");
 const mainBox = document.querySelector(".qust-box");
 const scoreCount = document.querySelector(".scoreCount");
-const button = document.querySelector("button");
-const quizComplete = document.querySelector(".quiz-complete");
-const blur = document.querySelector(".blur");
+const startBtn = document.querySelector(".startBtn");
+const endBtn = document.querySelector("button");
+const quizComplete = document.querySelector(".quiz-modal");
 const hearts = document.querySelectorAll(".heart");
 
 let wrongAnswer = new Audio("/src/wrong.mp3");
 let applause = new Audio("/src/applause.mp3");
 let right = new Audio("/src/right.mp3");
 
-button.addEventListener("click", () => {
+startBtn.addEventListener("click", () => {
+    let startModal = document.querySelector(".start");
+    startModal.style.transition = "0.5s ease";
+    startModal.style.opacity = "0";
+    startModal.style.transform = "scale(0)";
+});
+
+endBtn.addEventListener("click", () => {
     location.reload();
 });
 
@@ -55,19 +62,15 @@ function makeFourCard(counter) {
 }
 
 function endQuiz() {
-    let messageFail = `Увы, вы не смогли пройти квиз до конца, вы набрали ${goodCounter} очков`;
-    let messageComplete = `Вы молодец! Вы ответили верно на ${goodCounter} из ${answer.length} вопросов`;
-    let messageMaster = `Ого, вы ответили верно на все ${answer.length} вопросов!`;
     let finishText = document.querySelector(".quiz-complete-text");
     applause.play();
     quizComplete.style.display = "block";
-    blur.style.display = "block";
     if (badCounter === hearts.length) {
-        finishText.textContent = messageFail;
+        finishText.textContent = `Увы, вы не смогли пройти квиз до конца, вы набрали ${goodCounter} очков`;
     } else if (goodCounter === answer.length) {
-        finishText.textContent = messageMaster;
+        finishText.textContent = `Ого, вы ответили верно на все ${answer.length} вопросов!`;
     } else {
-        finishText.textContent = messageComplete;
+        finishText.textContent = `Вы молодец! Вы ответили верно на ${goodCounter} из ${answer.length} вопросов`;
     }
 }
 
