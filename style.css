@@ -240,6 +240,55 @@ body {
     left: -40px;
 }
 
+.health-bar {
+    position: absolute;
+    top: 406px;
+    left: 240px;
+    width: 120px;
+    height: 26.5px;
+    background-color: rgb(50, 84, 205);
+    outline-style: groove;
+    outline-color: rgb(32, 170, 185);
+    outline-width: 5px;
+}
+
+.heart,
+.heart-circle1,
+.heart-circle2 {
+    position: absolute;
+    left: 20px;
+    top: 7px;
+    width: 15px;
+    height: 15px;
+    background-color: rgb(223, 43, 43);
+    transform: rotate(45deg);
+}
+
+.heart-circle1,
+.heart-circle2 {
+    border-radius: 50%;
+    left: -8px;
+    top: 0px;
+    background-color: inherit;
+}
+
+.heart-circle2 {
+    left: 0px;
+    top: -8px;
+}
+
+.heart:nth-child(2) {
+    left: 53px;
+}
+
+.heart:nth-child(3) {
+    left: 85px;
+}
+
+.dark-heart {
+    background-color: black;
+}
+
 @keyframes threadRotate {
     50% {
         transform: scale(0.15) rotate(-35deg);

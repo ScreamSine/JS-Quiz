@@ -1,5 +1,6 @@
 let counter = 0;
 let goodCounter = 0;
+let badCounter = 0;
 const quizTitle = document.querySelector(".quiz-title");
 const card = document.querySelectorAll(".quiz-item");
 const mainBox = document.querySelector(".qust-box");
@@ -8,6 +9,7 @@ const finalCount = document.querySelector(".finalCount");
 const button = document.querySelector("button");
 const quizComplete = document.querySelector(".quiz-complete");
 const blur = document.querySelector(".blur");
+const hearts = document.querySelectorAll(".heart");
 
 let wrongAnswer = new Audio("/src/wrong.mp3");
 let applause = new Audio("/src/applause.mp3");
@@ -60,6 +62,14 @@ function endQuiz() {
     blur.style.display = "block";
 }
 
+function killHeart() {
+    hearts[badCounter].classList.add("dark-heart");
+    badCounter++;
+    if (badCounter === 3) {
+        endQuiz();
+    }
+}
+
 mainBox.addEventListener("click", (e) => {
     let target = e.target;
     if (target.className === "quiz-item") {
@@ -78,6 +88,7 @@ mainBox.addEventListener("click", (e) => {
             target.classList.add("badAnswer");
             counter++;
             goodCounter += 0;
+            killHeart();
             scoreCountUp();
             setTimeout(function() {
                 target.classList.remove("badAnswer");
